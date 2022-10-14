@@ -65,16 +65,14 @@ jobs:
           eb_app_name: $EB_APP_NAME
           eb_env_name: $EB_ENV_NAME
           eb_subdomain: $EB_SUBDOMAIN
-          # eb_config_file:
-          #   type: string
+          eb_config_file: ''
           # ebi_arguments:
           #   type: string
           #   default: ''
           # eb_config_diff:
           #   type: string
           #   default: ''
-          # billing_tag:
-          #   type: string
+          billing_tag: ''
           aws_access_key_id: $AWS_ACCESS_KEY_ID
           aws_secret_access_key: $AWS_SECRET_ACCESS_KEY
           region: $AWS_REGION
