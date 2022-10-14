@@ -4,7 +4,7 @@ orbs:
   node: circleci/node@5.0.2
   eb: circleci/aws-elastic-beanstalk@2.0.1
   aws-cli: circleci/aws-cli@3.1.1
-  nikkei-aws-eb: nikkei/nikkei-aws-eb@1.7.1
+  # nikkei-aws-eb: nikkei/nikkei-aws-eb@1.7.1
   # aws-eb-cli: speakable-org/aws-eb-cli@1.0.1
   # different jobs are calles later in the workflows sections
 jobs:
@@ -61,21 +61,21 @@ jobs:
       - eb/setup
       - aws-cli/setup
       - checkout
-      - nikkei-aws-eb/init_eb:
-          eb_app_name: $EB_APP_NAME
-          eb_env_name: $EB_ENV_NAME
-          eb_subdomain: $EB_SUBDOMAIN
-          eb_config_file: ''
-          # ebi_arguments:
-          #   type: string
-          #   default: ''
-          # eb_config_diff:
-          #   type: string
-          #   default: ''
-          billing_tag: ''
-          aws_access_key_id: $AWS_ACCESS_KEY_ID
-          aws_secret_access_key: $AWS_SECRET_ACCESS_KEY
-          region: $AWS_REGION
+      # - nikkei-aws-eb/init_eb:
+      #     eb_app_name: $EB_APP_NAME
+      #     eb_env_name: $EB_ENV_NAME
+      #     eb_subdomain: $EB_SUBDOMAIN
+      #     eb_config_file: ''
+      #     # ebi_arguments:
+      #     #   type: string
+      #     #   default: ''
+      #     # eb_config_diff:
+      #     #   type: string
+      #     #   default: ''
+      #     billing_tag: ''
+      #     aws_access_key_id: $AWS_ACCESS_KEY_ID
+      #     aws_secret_access_key: $AWS_SECRET_ACCESS_KEY
+      #     region: $AWS_REGION
         
 
 
