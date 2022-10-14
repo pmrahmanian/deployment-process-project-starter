@@ -12,6 +12,6 @@
         "api:start": "cd udagram/udagram-api && npm run dev",
         "api:deploy": "cd udagram/udagram-api && npm run deploy",
         "setenv": "chmod +x udagram/bin/deploy.sh && udagram/bin/deploy.sh",
-        "deploy": "npm run setenv && npm run api:deploy && npm run frontend:deploy"
+        "deploy": "npm run api:deploy && npm run frontend:deploy"
     }
 }
