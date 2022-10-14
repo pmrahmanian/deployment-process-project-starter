@@ -13,7 +13,8 @@
     "prod": "npx tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
     "setenv": "chmod +x udagram/bin/deploy.sh && udagram/bin/deploy.sh",
-    "deploy": "npm run setenv && npm run build && eb list && eb use udagram-api-dev && eb deploy",
+    "setenvdirectly": "eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_DB=$POSTGRES_DB POSTGRES_PORT=$POSTGRES_PORT POSTGRES_HOST=$POSTGRES_HOST AWS_REGION=$AWS_REGION AWS_PROFILE=$AWS_PROFILE AWS_BUCKET=$AWS_BUCKET URL=$URL JWT_SECRET=$JWT_SECRET AWS_ACCESS_KEY=$AWS_ACCESS_KEY AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN",
+    "deploy": "npm run setenvdirectly && npm run build && eb list && eb use udagram-api-dev && eb deploy",
     "build": "npm install . && npm run clean && tsc && cp -rf src/config www/config && cp -R .elasticbeanstalk www/.elasticbeanstalk && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
