@@ -84,10 +84,6 @@ jobs:
           # TODO: Install, build, deploy in both apps
           command: |
             echo " TODO: Install, build, deploy in both apps"
-            eb create my-environment
-            eb deploy my-environment
-            eb status
-            npm run setenv
             npm run deploy
             
 workflows:
